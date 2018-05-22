@@ -11,7 +11,7 @@ let orm = {
             console.log(result);
         })
     },
-    createBurger: function (table, burgerName, callback) {
+    createBurger: function (table, burgerName, cb) {
         connection.query(`INSERT INTO ${tableInput} SET ?`, {
             burger_name: burgerName,
             devoured: false,
@@ -19,16 +19,16 @@ let orm = {
             if (err) {
                 throw err;
             }
-            callback(result);
+            cb(result);
             console.log(result);
         })
     },
-    updateBurger: function (table, burgerID, callback) {
+    updateBurger: function (table, burgerID, cb) {
         connection.query(`INSERT INTO ${tableInput} SET ? WHERE`, [{ devoured: true }, { id: burgerID }], function (err, result) {
                 if (err) {
                     throw err;
                 }
-                callback(result);
+                cb(result);
                 console.log(result);
             })
     }

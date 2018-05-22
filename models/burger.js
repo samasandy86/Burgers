@@ -1,7 +1,7 @@
-let orm = require("./config/orm.js");
+let orm = require("../config/orm.js");
 
 
-var burger = {
+let burger = {
     selectAll: function(callback) {
       orm.selectAll("burgers", function(res) {
         callback(res);
